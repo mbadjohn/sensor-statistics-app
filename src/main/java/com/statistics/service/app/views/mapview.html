@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-74.50, 40],
+        zoom: 9
+    });
+
+    map.on('load', function() {
+        map.addLayer({
+            id: 'rpd_parks',
+            type: 'fill',
+            source: {
+                type: 'vector',
+                url: 'mapbox://mapbox.3o7ubwm8'
+            },
+            'source-layer': 'RPD_Parks'
+        });
+    });
+</script>
